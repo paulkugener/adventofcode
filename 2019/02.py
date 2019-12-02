@@ -16,10 +16,11 @@ p5 = "1,9,10,3,2,3,11,0,99,30,40,50"
 def transform_to_list(str):
     return [int(x) for x in str.split(',')]
 
-def do_operations(puzzle, noun=12, verb=2):
+def do_operations(puzzle, overwrite=False, noun=12, verb=2):
     intcode = transform_to_list(puzzle)
-    intcode[1] = noun
-    intcode[2] = verb
+    if overwrite:
+        intcode[1] = noun
+        intcode[2] = verb
     for index in range(0, len(intcode), 4):
         if intcode[index] == 99:
             return intcode[0]
@@ -32,12 +33,19 @@ def do_operations(puzzle, noun=12, verb=2):
 
 # To do this, before running the program, replace position 1 with the value 12 and replace position 2 with the value 2. What value is left at position 0 after the program halts?
 
+# using assert to check stuff
+assert do_operations(p1) == 2
+assert do_operations(p2) == 2
+assert do_operations(p3) == 2
+assert do_operations(p4) == 30
+assert do_operations(p5) == 3500
+
 # part1
-print(do_operations(p))
+print(do_operations(p, True))
 
 # part2
 for a in range(100):
     for b in range(100):
-        result = do_operations(p, a, b)
+        result = do_operations(p, True, a, b)
         if int(result) == 19690720:
             print(100 * a + b)
