@@ -4,7 +4,7 @@ level = 0
 position = 0
 basementFlag = False
 
-with open("01input") as f:
+with open("./2015/01input") as f:
     for line in f:
         for char in line:
             if char == "(":

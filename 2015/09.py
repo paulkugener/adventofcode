@@ -5,7 +5,7 @@ from itertools import permutations
 distance_matrix = dict()
 locations = set()
 
-with open("09input", "r") as f:
+with open("./2015/09input", "r") as f:
     for line in f:
         from_location, _, to_location, _, distance = line.rstrip().split(" ")
         distance_matrix.setdefault(from_location, dict())[to_location] = int(distance)

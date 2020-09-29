@@ -3,7 +3,7 @@
 surface_area = 0
 ribbon_length = 0
 
-with open("02input") as f:
+with open("./2015/02input") as f:
     for line in f:
         present = [int(x) for x in line.rstrip("\n\r").split("x")]
         l, w, h = present

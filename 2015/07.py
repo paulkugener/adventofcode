@@ -34,19 +34,18 @@ def evaluate(target_gate, instructions, wires):
         elif "LSHIFT" in operation:
             wires[target_gate] = (wires[operation[0]] << int(operation[2]))
 
-if __name__ == "__main__":
-    instructions = dict()
-    wires = {}
-    with open("07input") as f:
-        for line in f:
-            operation, target = line.split("->")
-            instructions[target.strip()] = operation.strip().split(" ")
-    evaluate('a', instructions, wires)
-    print("part 1:", wires['a'])
-    # part 2:
-    wires = {'b': wires['a']}
-    evaluate('a', instructions, wires)
-    print("part 2:", wires['a'])
+instructions = dict()
+wires = {}
+with open("./2015/07input") as f:
+    for line in f:
+        operation, target = line.split("->")
+        instructions[target.strip()] = operation.strip().split(" ")
+evaluate('a', instructions, wires)
+print("part 1:", wires['a'])
+# part 2:
+wires = {'b': wires['a']}
+evaluate('a', instructions, wires)
+print("part 2:", wires['a'])
 
 # Solutions:
 # Wire [a] has the signal 3176 after running the circuit.

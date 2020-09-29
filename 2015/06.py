@@ -26,7 +26,7 @@ def toggle_lights(start_x, start_y, end_x, end_y):
             grid_1[x, y] = not grid_1[x, y]
             grid_2[x, y] += 2
 
-with open("06input") as f:
+with open("./2015/06input") as f:
     for line in f:
         instruction = line.rstrip("\n\r").split(" ")
         if instruction[0] == "turn":

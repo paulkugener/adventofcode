@@ -1,6 +1,6 @@
 #! python3 
 
-with open("08input", "r") as f:
+with open("./2015/08input", "r") as f:
     raw_sum = 0
     cooked_sum = 0
     escaped_sum = 0

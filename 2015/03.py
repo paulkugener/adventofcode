@@ -3,7 +3,7 @@
 x, y = 0, 0
 visits = [(x,y)]
 
-with open("03input") as f:
+with open("./2015/03input") as f:
     for line in f:
         for instruction in line:
             if instruction == "^":

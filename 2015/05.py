@@ -41,7 +41,7 @@ def check_repeat_with_skip(instr):
 nice_counter_1 = 0
 nice_counter_2 = 0
 
-with open("05input") as f:
+with open("./2015/05input") as f:
     for line in f:
         line = line.rstrip("\n\r")
         if  check_3_vowels(line) and check_double_letters(line) and check_naughty_combinations(line):

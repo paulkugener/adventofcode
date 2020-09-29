@@ -2,7 +2,7 @@
 
 import json
 
-data = json.loads(open('12input', 'r').read())
+data = json.loads(open('./2015/12input', 'r').read())
 
 def sum_numbers(obj):
     if type(obj) == type(dict()):
