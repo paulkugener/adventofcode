@@ -40,7 +40,7 @@ y = 0
 #     else:
 #         sys.exit("ERROR: distance instruction")
 
-# print("bunny HQ: location(", x, y, "), distance", x+y)
+# print("bunny HQ: location(", x, y, "), distance", abs(x)+abs(y))
 
 
 # part 2
