@@ -46,3 +46,4 @@ for n in instructions:
             cur = prev
         prev = cur
     print(PAD2[cur[1]][cur[0]], end="")
+    
