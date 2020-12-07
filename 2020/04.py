@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import copy, re, sys
+import re, sys
 
 passports = []
 
