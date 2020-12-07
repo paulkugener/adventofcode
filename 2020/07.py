@@ -18,7 +18,7 @@ with open("./2020/07input") as f:
         rules[a] = tmp
 
      
-def part1(rules):
+def part1():
     # How many bag colors can eventually contain at least one shiny gold bag?
     valid_bags = ['shiny gold']
     searching = True
@@ -37,11 +37,11 @@ def unpack(bag):
         result += int(i) * unpack(j)
     return 1 + result
 
-def part2(rules):
+def part2():
     # How many individual bags are required inside your single shiny gold bag?
     # -> recursive
     return unpack('shiny gold') - 1
 
 
-print(part1(rules))
-print(part2(rules))
+print(part1())
+print(part2())
