@@ -28,7 +28,7 @@ def part1():
 
 def part2():
     # What is the total number of distinct ways you can arrange the adapters to connect the charging outlet to your device?
-    # /u/ephemient 
+    # /u/ephemient https://github.com/ephemient/aoc2020/blob/main/py/src/aoc2020/day10.py
     nums = sorted(map(int, adapters))
     counter = Counter((0, ))
     for num in nums:
