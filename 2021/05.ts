@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs';
-import { mainModule } from 'process';
 
 const input = readFileSync("./05input").toString().trim().split("\r\n").map((item) => item.trim().split(" -> ").map((e) => e.trim().split(",").map((a) => parseInt(a))));
 
