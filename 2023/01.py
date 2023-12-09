@@ -13,7 +13,7 @@ LETTER_DIGITS = {
     }
 
 
-def get_first_digit(line, direction, include_letter_digits = False) -> int:
+def get_first_digit(line, direction, include_letter_digits = False):
     start = 0
     end = len(line)
     step = 1
