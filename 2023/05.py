@@ -69,37 +69,29 @@ def get_mapped_ranges(c, slices):
                 # range completely in slice
                 no_slice_apply = False
                 mapped_ranges.append([start+slice['action'], length])
-                break
             elif start < slice['source_start'] and end >= slice['source_start'] and end < slice['source_end']:
                 # range starts before, and ends inside slice
                 no_slice_apply = False
                 pre_length = slice['source_start'] - start
-                assert pre_length < length
                 inside_length = length - pre_length
                 ranges_to_treat.append([start, pre_length])
                 mapped_ranges.append([slice['target_start'], inside_length])
-                break
             elif start >= slice['source_start'] and start <= slice['source_end'] and end > slice['source_end']:
                 # range starts inside slice, and ends after
                 no_slice_apply = False
                 inside_length = slice['source_end']+1 - start
-                assert inside_length < length
                 post_length = length - inside_length
                 mapped_ranges.append([start + slice['action'], inside_length])
                 ranges_to_treat.append([start + inside_length +1, post_length])
-                break
             elif start < slice['source_start'] and slice['source_end'] < end:
                 # range starts before, is inside slice, and ends after
                 no_slice_apply = False
                 pre_length = slice['source_start'] - start
-                assert pre_length < length
                 inside_length = slice['range_length']
-                assert inside_length < length
                 post_length = length - pre_length - inside_length
                 ranges_to_treat.append([start, pre_length])
                 mapped_ranges.append([slice['target_start'], inside_length])
                 ranges_to_treat.append([start+pre_length+inside_length+1 , post_length])
-                break
         if no_slice_apply:
             mapped_ranges.append(range)
     return mapped_ranges
@@ -115,6 +107,7 @@ def main():
     locations = do_mapping(seeds, maps)
     part1 = get_min_location(locations)
     print(f"{part1 = }")
+    
     seeds = get_seeds(input_blocks, 'pair')
     locations = do_mapping(seeds, maps)
     part2 = get_min_location(locations)
