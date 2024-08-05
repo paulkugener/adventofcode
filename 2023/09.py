@@ -52,7 +52,7 @@ def is_zero(h):
     return True
 
 def main():
-    with open('aoc23/09input.txt') as file:
+    with open('./2023/09input.txt') as file:
         lines = file.readlines()
     history = [[int(x) for x in line.split()] for line in lines]
 

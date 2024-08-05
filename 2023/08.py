@@ -42,7 +42,7 @@ def is_at_target(c):
     return True
 
 def main():
-    with open('aoc23/08input.txt') as file:
+    with open('./2023/08input.txt') as file:
         lines = file.read()
     instructions, network_raw = lines.split("\n\n")
     network = dict()

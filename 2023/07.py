@@ -131,7 +131,7 @@ def identify_poker_hand(hand, part2):
         return Hand.HIGH_CARD
 
 def main():
-    with open('aoc23/07input.txt') as file:
+    with open('./2023/07input.txt') as file:
         lines = file.readlines()
     hands = [[line.split()[0], int(line.split()[1])] for line in lines]
     part1 = do_(hands)
